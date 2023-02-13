@@ -1,0 +1,58 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<header>
+</header>
+<nav>
+</nav>
+<main>
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-sm-6 col-md-4" *ngFor="let item of feedData | slice:startIndex:endIndex">
+          <img class="img-fluid w-100" [src]="item.image" alt="{{ item.title }}">
+          <h5>{{ item.title }}</h5>
+          <p>{{ item.pubdate }}</p>
+          <p>{{ item.description }}</p>
+          <p><a target="_blank" [href]="item.link">Read More</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <aside>
+  </aside>
+</main>
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-4 offset-md-4">
+        <button class="btn btn-primary float-start" (click)="previousPage()" [disabled]="startIndex <= 0">&#8592; Back</button>
+        <button class="btn btn-primary float-end" (click)="nextPage()" [disabled]="endIndex >= feedData.length">Next &#8594;</button>
+        <p class="text-center">
+          <button class="btn btn-info" (click)="reloadPage()">&#8593; Reload</button>
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-4 offset-md-4">
+        <p class="text-center">Page {{ currentPage }} of {{ totalPages }}</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<router-outlet></router-outlet>
